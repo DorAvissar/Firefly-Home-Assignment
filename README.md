@@ -233,8 +233,8 @@ terraform apply -refresh-only
     1. By enter 'yes' The command will update the Terraform state to reflect the current status of the infrastructure (including manual changes).
     It will not modify any real infrastructure—it only ensures the state file is in sync with the existing resources.
 
-    2. Modify my Terraform Code: 
-    
+    2. Modify my Terraform Code: To prevent Terraform from attempting to remove these changes in the future, i need to reflect them in my code. 
+
         - I added the Vendor Tag in ec2.tf: 
         ```
         tags = {
