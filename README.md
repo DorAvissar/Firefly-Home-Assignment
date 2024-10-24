@@ -98,6 +98,9 @@ To create an S3 bucket, I used the '5-s3Bucket.tf' file.
 
 This configuration creates a private S3 bucket with a unique name, ensuring uniqueness by appending a random string to the bucket name. The bucket is also tagged for easy identification.
 
+![alt text](screenshots/s3one.png)
+![alt text](screenshots/s3two.png)
+
 ![alt text](screenshots/s3.png)
 
 ### 5. Connect to the EC2 instance using the AWS CLI or the UI:
