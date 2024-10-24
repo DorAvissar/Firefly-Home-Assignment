@@ -75,9 +75,14 @@ terraform validate       # Validates the Terraform configuration files
 terraform plan           # Creates an execution plan and previews changes
 terraform apply          # Applies the plan and creates the infrastructure
 ```
-![alt text](screenshots/terraform%20plan%20.png)
-
-![alt text](screenshots/terraform%20apply.png)
+![alt text](screenshots/plan1.png)
+![alt text](screenshots/plan2.png)
+![alt text](screenshots/plan3.png)
+![alt text](screenshots/plan4.png)
+![alt text](screenshots/plan5.png)
+![alt text](screenshots/plan6.png)
+![alt text](screenshots/plan7.png)
+![alt text](screenshots/plan8.png)
 
 3. Retrieve the EC2 Public IP: Once Terraform finishes creating all the resources, the public IP address of the EC2 instance will be displayed in the output.
 
