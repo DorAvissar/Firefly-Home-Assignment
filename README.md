@@ -1,5 +1,12 @@
 # FireFly Home Assignment:
 
+## Table of Contents
+[Part 1: Setting Up Infrastructure](#part-1)
+
+[Part 2: Configuration Modification](#part-2)
+
+[Exploring Firefly Features](#exploring-firefly-features)
+
 # Part 1:
 
 ###  1. Create a Free Tier AWS account: 
@@ -406,7 +413,7 @@ The new EC2 Configurations:
 ![alt text](screenshots/part2/ec2afternewsg.png)
 
 
-### 4.  which feature did you find the most interesting?:
+## Exploring Firefly Features
 
 During my exploration of Firefly, two features stood out:  Codifying Unmanaged Terraform Assets and also the Guardrails feature.  
 
