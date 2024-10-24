@@ -114,7 +114,6 @@ using the  AWS Command Line Interface:
 ```
 aws ssm start-session --target <INSTANCE_ID>
 ```
-the instance id should be printed as part of the terraform outputs.tf. 
 
 ![alt text](screenshots/aws%20cli.png)
 
@@ -216,37 +215,27 @@ with the following steps:
 
 After making these manual changes, I used Terraform to detect what changed using the command: 
 ```
-terraform plan
+terraform apply -refresh-only 
 ```
 
-![alt text](screenshots/part2/terraformplan.png)
+![alt text](screenshots/refresh.png)
 
-- The EC2 instance is being replaced because of tag differences.
+![alt text](screenshots/refresh2.png)
 
-- The security group will be updated in-place to align with the current rules. 
+ ![alt text](screenshots/refresh3.png)
 
-why not use terraform refresh?
 
-according to the official documentation:
-
-![alt text](screenshots/part2/terraformrefresh.png)
 
 ### C. Use TF to align your IaC in order to remediate those change: 
 
 - Steps to Align IaC Using Terraform
 
-    1. Analyze the Drift:
+    1. By enter 'yes' The command will update the Terraform state to reflect the current status of the infrastructure (including manual changes).
+    It will not modify any real infrastructure—it only ensures the state file is in sync with the existing resources.
+
+    2. Modify my Terraform Code: 
     
-        From the terraform plan output, I saw that:
-        - The Vendor tag was missing in the EC2 instance.
-
-        - The security group rules were changed 
-
-        This means I need to modify my Terraform code to reflect these changes, ensuring Terraform aligns with the desired infrastructure state.
-
-    2. Modify Your Terraform Code: 
-    
-        - Add the Vendor Tag Back in ec2.tf: 
+        - I added the Vendor Tag in ec2.tf: 
         ```
         tags = {
             Name   = "${var.ec2_instance_name}-instance"
@@ -254,7 +243,7 @@ according to the official documentation:
         }
         ``` 
         
-        - Update Security Group Rules in securitygroups.tf:
+        - I Updated the Security Group Rules in securitygroups.tf:
         ```
         ingress {
             from_port   = 22
@@ -272,7 +261,7 @@ according to the official documentation:
         terraform plan
         ```
 
-![alt text](screenshots/part2/terraformplanafter.png)
+![alt text](screenshots/part2/planresults.png)
  
 
 ### 2. Learning new S3 bucket attributes:
