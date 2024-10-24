@@ -1,0 +1,10 @@
+# Ignore Terraform state files
+*.tfstate
+*.tfstate.backup
+.terraform/
+
+# Ignore private keys
+*.pem
+*.key
+
+
