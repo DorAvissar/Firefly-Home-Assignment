@@ -95,7 +95,7 @@ terraform apply          # Applies the plan and creates the infrastructure
 
 4. SSH into the EC2 Instance: I Used the following command to SSH into the instance:
 ```
-ssh -i my-key-pair.pem ec2-user@3.84.119.217
+ssh -i my-key-pair.pem ec2-user@54.160.67.42
 ```
 ![alt text](screenshots/ssh.png)
 
